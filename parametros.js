@@ -1,11 +1,17 @@
 /**
-* Aprendendo sobre Parâmetros no node js
+  * Aprendendo sobre Parâmetros no node js
 */
 const express = require("express")
 const app = express();
 
-app.get("/",(req,res)=>{
+/*app.get("/",(req,res)=>{
   res.send("Olá");
+})*/
+app.get("/",(req,res)=>{
+  res.sendFile(__dirname+"/html/index.html")
+})
+app.get("/sobre",(req,res)=>{
+  res.sendFile(__dirname+"/html/sobre.html")
 })
 app.get("/user/:nome",(req,res)=>{
   //res.send(req.params);
