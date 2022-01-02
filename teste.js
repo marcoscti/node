@@ -2,7 +2,7 @@
 Nessa Aula Aprendi a conectar o node JS ao Mysql
 */
 const Sequelize = require("sequelize")
-const sequelize = new Sequelize('test','root','',{
+const sequelize = new Sequelize('test', 'root', '', {
     host: 'localhost',
     dialect: 'mysql'
 });
@@ -15,26 +15,26 @@ sequelize.authenticate().then(
     console.log('Falha ao se conectar: '+erro)
 })
 */
-const Postagem = sequelize.define('postagens',{
-    titulo:{
+const Postagem = sequelize.define('postagens', {
+    titulo: {
         type: Sequelize.STRING,
     },
-    conteudo:{
-        type:Sequelize.TEXT
+    conteudo: {
+        type: Sequelize.TEXT
     }
 })
-const Usuario = sequelize.define('usuarios',{
-    nome:{
-        type:Sequelize.STRING
+const Usuario = sequelize.define('usuarios', {
+    nome: {
+        type: Sequelize.STRING
     },
-    sobrenome:{
-        type:Sequelize.STRING
+    sobrenome: {
+        type: Sequelize.STRING
     },
-    idade:{
-        type:Sequelize.INTEGER
+    idade: {
+        type: Sequelize.INTEGER
     },
-    email:{
-        type:Sequelize.STRING
+    email: {
+        type: Sequelize.STRING
     }
 })
 
@@ -46,8 +46,8 @@ const Usuario = sequelize.define('usuarios',{
 Usuario.create({
     nome: "Marcos",
     sobrenome: "Cordeiro",
-    idade:28,
-    email:"marcosc974@gmail.com"
+    idade: 28,
+    email: "marcosc974@gmail.com"
 })
 //Postagem.sync({force:true})
 //Usuario.sync({force:true})
